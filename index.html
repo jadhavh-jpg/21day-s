@@ -84,6 +84,24 @@ src="https://www.facebook.com/tr?id=2399921483767599&ev=PageView&noscript=1"
  .sticky {
   position:fixed; bottom:0; left:0; width:100%; text-align:center;
  }
+ .countdown-wrapper {
+  text-align: center;
+  margin: 10px auto 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background:#fffaf0;
+}
+.countdown-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+#countdown {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 </style>
 </head>
 <body>
@@ -92,9 +110,9 @@ src="https://www.facebook.com/tr?id=2399921483767599&ev=PageView&noscript=1"
 <div class="hero">
  <img src="logo.png" alt="Logo">
  <img src="silhouette.png.jpg" alt="Meditation Silhouette" style="max-width:200px;margin-bottom:12px;opacity:0.85;" />
- <a href="#join" class="cta-btn" style="display:inline-block;border:2px solid #d4b373;position:relative;overflow:hidden;">Transform Your Mind & Mornings in 21 Days<span class="shine"></span></a>
+ <a href="#333" class="cta-btn" style="display:inline-block;border:2px solid #d4b373;position:relative;overflow:hidden;">Transform Your Mind & Mornings in 21 Days<span class="shine"></span></a>
  <p>Simple Daily Meditation & Gratitude Rituals for Success & Peace</p>
- <a href="#join" class="cta-btn">Join The Challenge</a>
+ <a href="#333" class="cta-btn">333 The Challenge</a>
 </div>
 
 <!-- FEATURES SECTION -->
@@ -142,8 +160,12 @@ frameborder="0" allowfullscreen></iframe>
 
 <!-- PRICING -->
 <div class="section">
- <div class="pricing" id="join">
+ <div class="pricing" id="style">
   <h2>Entry Fee: ₹333/-</h2>
+  <div class="countdown-wrapper">
+    <p class="countdown-title">Limited Seats! Registration Closing In:</p>
+    <div id="countdown"></div>
+  </div>
  <div class="qr-box">
     <img src="plink.jpg" alt="Scan & Pay ₹333" style="width:200px;border-radius:10px;">
 </div>
@@ -154,11 +176,30 @@ frameborder="0" allowfullscreen></iframe>
 
 <!-- STICKY CTA -->
 <div class="sticky">
- <a href="https://wa.me/919736317525" class="cta-btn" style="border-radius:0;">Join Now</a>
+ <a href="https://wa.me/919736317525" class="cta-btn" style="border-radius:0;">333 Now</a>
 </div>
+<script>
+  var countDownDate = new Date("Dec 10, 2025 23:59:59").getTime();
+  var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "Registration Closed";
+      return;
+    }
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("countdown").innerHTML =
+      days + "d : " + hours + "h : " + minutes + "m : " + seconds + "s ";
+  }, 1000);
+</script>
 
 </body>
 </html>
+
 
 
 
